@@ -5,8 +5,8 @@
  */
 package dateutilities;
 
-import static dateutilities.DateUtilities.dateTimeToString;
-import static dateutilities.DateUtilities.dateToString;
+//import dateutilities.DateUtilities.dateTimeToString;
+//import dateutilities.DateUtilities.dateToString;
 import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -22,8 +22,19 @@ import java.time.temporal.TemporalAdjusters;
 public class TestOfDateUtilities {
    
     public static void main(String[] args) {
-         System.out.println(dateToString(LocalDate.now(), "MMMM dd',' yyyy"));
-        System.out.println(dateTimeToString(LocalDateTime.now(), "MMMM dd',' yyyy HH':'mm"));
+//         LocalDate dateLocal = new LocalDate();
+        
+        DateUtilities du = new DateUtilities();
+        LocalDate date1 = LocalDate.now();
+        LocalDate date2 = LocalDate.now().plusDays(3);
+        LocalDateTime dateTime1 = LocalDateTime.now();
+        LocalDateTime dateTime2 = LocalDateTime.now().plusDays(3);
+        
+        
+        
+         
+        System.out.println(du.dateToString(date1, "MMMM dd',' yyyy"));
+        System.out.println(du.dateTimeToString(dateTime1, "MMMM dd',' yyyy HH':'mm"));
 //        System.out.println(Duration.between(LocalDate.now(), LocalDate.now().plusDays(3)));
 //        Duration a = Duration.between(LocalDate.now(), LocalDate.now().plusDays(3));
 //        System.out.println(a);
@@ -45,9 +56,9 @@ public class TestOfDateUtilities {
         
         
         
-        System.out.println("Minutes between: "+DateUtilities.minutesBetween(startDate, endDate));
+        System.out.println("Minutes between: "+du.minutesBetween(dateTime1, dateTime2));
         
-        System.out.println(dateTimeToString(startDate,"aaa"));
+        System.out.println(du.dateTimeToString(dateTime1,"yyyy"));
         
         
         
